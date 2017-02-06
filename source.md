@@ -45,3 +45,14 @@ https://github.com/FlintMade/react-keystone-boilerplate
 ###seamless-immutable
 immutable向下兼容版本。比immutable使用更简便
 https://github.com/rtfeldman/seamless-immutable
+
+###chai
+JS测试框架
+http://chaijs.com/api/
+
+###immutable
+不可变对象
+
+###rxjs
+通过观察事件
+http://reactivex.io/
