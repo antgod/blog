@@ -56,3 +56,11 @@ http://chaijs.com/api/
 ###rxjs
 通过观察事件
 http://reactivex.io/
+
+### devtool
+node调试工具
+https://github.com/Jam3/devtool
+
+### anyproxy
+http请求代理工具
+http://anyproxy.io/cn/
