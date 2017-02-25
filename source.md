@@ -64,3 +64,27 @@ https://github.com/Jam3/devtool
 ### anyproxy
 http请求代理工具
 http://anyproxy.io/cn/
+
+### needle
+敏捷的流式Node的Http客户端。实现代理，cookie,multipart(表单上传),deflate(压缩)，iconv（gbk）等功能。
+https://github.com/tomas/needle
+
+### gitup
+你做过一辈子的git接口工具终于来了（可以修改提交后注释等）
+http://gitup.co
+
+###commander
+命令行可执行文件完整的解决方案。
+https://github.com/tj/commander
+
+###prompt
+Nodejs一款漂亮的命令行提示工具
+https://github.com/flatiron/prompt
+
+###classnames
+一款javascript实用的按照条件拼装类样式工具
+https://github.com/JedWatson/classnames
+
+###understore
+js实用工具库
+http://underscorejs.org/
