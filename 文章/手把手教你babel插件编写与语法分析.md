@@ -3,16 +3,16 @@
 
 ##编写你的第一个 Babel 插件
 
-先抛开各种概念和API，直接上干货，做一个简单而又实用的功能。
+不太喜欢上来就讲大道理，先来个小栗子，做个简单而又实用的功能，做完后，理论你就理解一大半了。
 
-比如你有以下代码
+我们需要antd里面的一个组件Button，代码如下：
 ```
 import { Button } from 'antd'
 ```
 
-我们只需要antd里面的一个组件Button，现在却导入antd/lib/index.js所有对象，这显然不是我们想要的。
+我们只想引入Button组件，现在却导入antd/lib/index.js所有组件，导致打包后文件大了好多，这显然不是我们想要的。
 
-我们希望只引入antd/lib/button
+我们想要的是只引入antd/lib/button
 ```
 import Button from 'antd/lib/button'
 ```
@@ -80,16 +80,17 @@ import Button from 'antd/lib/button'
         }
       })
     ```
-    短短的几行代码，相信看了注释，亲爱的读者们也是一头雾水。那么请登录 [ast语法树在线生成网站][3]，输入`import Button from 'antd'`,在看右边的生成的语法树，**我们从这里开始讲起**。
+    短短的几行代码，即使看了注释，相信亲爱的读者仍然一头雾水。请登录 [ast语法树在线生成网站][3]，输入`import Button from 'antd'`,对比右侧生成的语法树与代码，**我们从代码开始讲起**。
 
-    代码中ImportDeclaration代表只处理代码中`import`这样的代码（请注意网站生成的语法树）。
+    - 代码中ImportDeclaration代表只处理代码中`import`这样的代码（请注意网站生成的语法树）。
+    - 我们拿到specifiers是引用声明，就是`import { Button }`中的Button，并且判断长度为1（长度大于1的话得多行引入，要修改语法树结构）。做了以下两件事：
 
-    我们拿到specifiers是引用声明，就是`import { Button}`中的Button，并且判断长度为1（长度大于1的话得多行引入，要修改语法树结构）。做了以下两件事：
+        - 拿到Button ,转成小写，拼接到`source.value`也就是`'antd'`后面。
+        - 把Specifier类型为`ImportSpecifier`也就是`{ Button }`改为`ImportDefaultSpecifier`，这样就把 `Import { Button }`改成了`Import Button`。
 
-    1. 拿到Button ,转成小写，拼接到`source.value`也就是`'antd'`后面。
-    1. 把Specifier类型为`ImportSpecifier`也就是`{ Button }`改为`ImportDefaultSpecifier`，这样就把 `Import { Button }`改成了`Import Button`。
+    OK，就这么简单，也许你还没有明白，没关系，联系我吧。（mail: hongji_12313@163.com）
 
-    OK，就这么简单，也许你还没有明白，那么请联系我mail: hongji_12313@163.com
+    然后我们再来看理论（理论的例子全部在[ast][4]仓库中）。
 
 ##基础
 
@@ -901,3 +902,4 @@ console.log(generate(ast).code);
   [1]: https://github.com/antgod/babel-plugin-import
   [2]: https://babeljs.io/docs/core-packages/
   [3]: http://esprima.org/demo/parse.html#
+  [4]: https://github.com/antgod/ast
