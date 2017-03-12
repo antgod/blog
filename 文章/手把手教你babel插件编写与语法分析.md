@@ -898,6 +898,6 @@ console.log(generate(ast).code);
 ```
 
 
-  [1]: https://github.com/antgod/ast/babel-plugin-test
+  [1]: https://github.com/antgod/babel-plugin-import
   [2]: https://babeljs.io/docs/core-packages/
   [3]: http://esprima.org/demo/parse.html#
