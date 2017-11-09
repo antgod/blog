@@ -1,4 +1,4 @@
-#redux
+# redux
 用了两天时间，把redux（3.6.0）和react-redux（4.4.5）源码注释了一遍。注释文件分别在[redux-doc][1]与[react-redux-doc][2]中。
 
 redux源码很简单，react-redux有些复杂，但只要花点心思仔细阅读，你会发现，还是那么难懂。
@@ -937,7 +937,7 @@ function wrapWithConnect(WrappedComponent) {
 
 以上就是对react-redux核心源码的理解，其实看懂了也蛮简单的。下面我们看下redux最难理解的部分middleware。
 
-#middleware
+# middleware
 ### applyMiddleware
 这是redux最出彩的地方，类似于koa的middleware。也是redux中最难懂的一部分。
 
