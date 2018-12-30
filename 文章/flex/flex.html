@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		.container {
+			height: 100vh;
+			display: flex;
+		}
+
+		.container span {
+			display: inline-block;
+		}
+
+		.s1 {
+			background: #666;
+			flex: 2 0 auto;
+			height: 100px;
+		}
+		.s2 {
+			background: #999;
+			flex-basis: 200px;
+			flex: auto;
+			height: 200px;
+		}
+		.s3 {
+			background: #ccc;
+			flex: 1 0 auto;
+			height: 300px;
+		}
+	</style>
+</head>
+
+<body>
+	<span class="container">
+		<span	class="s1">1</span>
+		<span class="s2">2</span>
+		<span class="s3">3</span>
+	</span>
+</body>
+
+</html>

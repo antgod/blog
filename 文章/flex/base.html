@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		.container {
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;	/* 主轴对其方式：默认为横轴，如果方向为column，主轴为纵轴 */
+			align-items: center;						/* 交叉轴对其方式：与主轴垂直的轴向，默认为纵轴，如果方向为column，交叉轴为横轴 */
+		}
+
+		.container span {
+			display: inline-block;
+		}
+
+		.s1 {
+			background: #666;
+			width: 100px;
+			height: 100px;
+		}
+		.s2 {
+			background: #999;
+			width: 200px;
+			height: 200px;
+		}
+		.s3 {
+			background: #ccc;
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+</head>
+
+<body>
+	<span class="container">
+		<span	class="s1">1</span>
+		<span class="s2">2</span>
+		<span class="s3">3</span>
+	</span>
+</body>
+
+</html>
