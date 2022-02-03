@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>mix</title>
+<script type="text/javascript">
+	function mix(target,source){
+		var args=[].slice.call(arguments),i=1,key,
+		ride=typeof args[args.length-1]=="boolean"?args.pop():true;
+		if(args.length===1){
+			target=!this.window?this:{};
+			i=0;
+		}
+
+		while((source=args[i++])){
+			for(key in source)
+				if(ride||(key in target)){
+					target[key]=source[key];
+				}
+		}
+	}
+
+	var o1={o1:"t1"},o2={o2:"t2"},o3={};
+
+	mix(o3,o2,o1,false);
+	console.log(o3);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
